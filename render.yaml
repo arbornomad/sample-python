@@ -1,0 +1,15 @@
+services:
+# A Python web service
+- type: web
+  name: sample-python2
+  env: python
+  repo: https://github.com/arbornomad/sample-python.git
+  numInstances: 3
+  buildCommand: pip install -r requirements.txt
+  startCommand: python3 server.py
+
+databases:
+- name: elephant
+  databaseName: mydb          # optional (Render may add a suffix)
+  user: jakel                # optional
+
